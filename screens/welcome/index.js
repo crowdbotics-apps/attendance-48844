@@ -1,64 +1,51 @@
-import React from "react"
-import {
-  View,
-  Image,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet
-} from "react-native"
+import React from 'react';
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 
-const WelcomeScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.group} />
-        <View style={styles.group}>
-          <Image style={styles.logo} source={require("./logo.png")} />
-          <Text style={styles.text}>
-            Let's build something amazing together!
-          </Text>
-        </View>
-        <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
+const LoginScreen = () => {
+  return <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Welcome to Our App</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Parent Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Teacher Login</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F8F8FC",
-    height: "100%"
-  },
-  scrollView: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 20
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F8F8FC'
   },
-  group: {
-    alignItems: "center"
+  header: {
+    marginBottom: 60
   },
-  logo: {
-    height: 180,
-    width: 180,
-    padding: 40,
-    borderRadius: 30,
-    margin: 40
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333'
   },
-  text: {
-    textAlign: "center",
-    fontSize: 28,
-    color: "#828AB0",
-    fontWeight: 700
+  buttonContainer: {
+    width: '80%'
   },
-  footer: {
-    textAlign: "center",
+  button: {
+    backgroundColor: '#4E97D1',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 20,
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: '#fff',
     fontSize: 18,
-    color: "#828AB0",
-    fontWeight: 700,
-    marginBottom: 20
+    fontWeight: 'bold'
   }
-})
-
-export default WelcomeScreen
+});
+export default LoginScreen;
